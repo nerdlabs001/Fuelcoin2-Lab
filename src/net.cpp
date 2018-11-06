@@ -57,7 +57,7 @@ static bool vfLimited[NET_MAX] = {};
 static CNode* pnodeLocalHost = NULL;
 CAddress addrSeenByPeer(CService("0.0.0.0", 0), nLocalServices);
 uint64_t nLocalHostNonce = 0;
-array<int, THREAD_MAX> vnThreadsRunning;
+boost::array<int, THREAD_MAX> vnThreadsRunning;
 static std::vector<SOCKET> vhListenSocket;
 CAddrMan addrman;
 
@@ -1139,12 +1139,15 @@ void MapPort()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
-    	{"82.196.11.189", "82.196.11.189"},
-    	{"82.196.13.206", "82.196.13.206"},
-    	{"104.236.14.225", "104.236.14.225"},
-    	{"104.236.15.120", "104.236.15.120"},
-    	{"128.199.186.111", "128.199.186.111"},
-    	{"128.199.187.181", "128.199.187.181"},
+        {"addnode", "108.170.1.134"},
+        {"addnode", "2.31.4.91"},
+        {"addnode", "73.193.117.192"},
+        {"addnode", "73.216.84.91"},
+        {"addnode", "76.171.34.102"},
+        {"addnode", "78.42.251.8"},
+        {"addnode", "82.7.189.241"},
+        {"addnode", "99.8.68.231"},
+        {"addnode", "5.196.190.82"},
 };
 
 void ThreadDNSAddressSeed(void* parg)
